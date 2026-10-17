@@ -6,6 +6,100 @@
     <title>Солярис — BookNest</title>
 </head>
 <body>
-    
+    <header>
+    <a href="index.html">BookNest</a>
+    <nav aria-label="Основная навигация">
+        <ul>
+        <li><a href="index.html">Каталог</a></li>
+        <li><a href="loan.html">Выдача книги</a></li>
+        </ul>
+    </nav>
+    </header>
+
+<main>
+  <nav aria-label="Хлебные крошки">
+    <ol>
+      <li><a href="index.html">Каталог</a></li>
+      <li aria-current="page">Солярис</li>
+    </ol>
+  </nav>
+
+  <article>
+    <h1>Солярис</h1>
+
+    <figure>
+      <img src="img/cover.jpg" alt="Обложка книги «Солярис»" width="200" height="300">
+      <figcaption>Издание 1961 года</figcaption>
+    </figure>
+
+    <section aria-labelledby="specs-title">
+      <h2 id="specs-title">Характеристики</h2>
+      <dl>
+        <dt>Автор</dt><dd>Станислав Лем</dd>
+        <dt>Год издания</dt><dd><time datetime="1961">1961</time></dd>
+        <dt>Жанр</dt><dd>Фантастика</dd>
+        <dt>ISBN</dt><dd><code>9785171384562</code></dd>
+        <dt>Свободных экземпляров</dt><dd>3</dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="desc-title">
+      <h2 id="desc-title">Описание</h2>
+      <p>Роман о контакте людей с разумным океаном на планете Солярис.</p>
+    </section>
+  </article>
+
+  <section aria-labelledby="reviews-title">
+    <h2 id="reviews-title">Отзывы</h2>
+
+    <article>
+      <h3>Отзыв от Алексея</h3>
+      <p>Оценка: 5 из 5</p>
+      <p>Книга на все 100.</p>
+      <p><time datetime="2026-09-10">10 сентября 2026</time></p>
+    </article>
+
+    <article>
+      <h3>Отзыв от Марии</h3>
+      <p>Оценка: 4 из 5</p>
+      <p>Могло быть и лучше если бы не концовка.</p>
+      <p><time datetime="2026-09-15">15 сентября 2026</time></p>
+    </article>
+
+    <h3>Оставить отзыв</h3>
+    <form action="#" method="post">
+      <label for="author">Ваше имя</label>
+      <input id="author" name="author" type="text" required minlength="2" maxlength="60">
+
+      <fieldset>
+        <legend>Оценка</legend>
+        <input id="r1" name="rating" type="radio" value="1" required><label for="r1">1</label>
+        <input id="r2" name="rating" type="radio" value="2"><label for="r2">2</label>
+        <input id="r3" name="rating" type="radio" value="3"><label for="r3">3</label>
+        <input id="r4" name="rating" type="radio" value="4"><label for="r4">4</label>
+        <input id="r5" name="rating" type="radio" value="5"><label for="r5">5</label>
+      </fieldset>
+
+      <label for="text">Текст отзыва</label>
+      <textarea id="text" name="text" rows="4" required maxlength="500"></textarea>
+
+      <button type="submit">Отправить отзыв</button>
+    </form>
+  </section>
+
+  <aside aria-labelledby="similar-title">
+    <h2 id="similar-title">Похожие книги</h2>
+    <ul>
+      <li><article><h3><a href="book.html">Дюна</a></h3><p>Фрэнк Герберт, 1965</p></article></li>
+      <li><article><h3><a href="book.html">Мы</a></h3><p>Евгений Замятин, 1924</p></article></li>
+      <li><article><h3><a href="book.html">Основание</a></h3><p>Айзек Азимов, 1951</p></article></li>
+      <li><article><h3><a href="book.html">Пикник на обочине</a></h3><p>Аркадий и Борис Стругацкие, 1972</p></article></li>
+    </ul>
+  </aside>
+</main>
+
+    <footer>
+    <p>&copy; 2026 BookNest · Крупин В.А., 24-ИС-1</p>
+    </footer>
 </body>
 </html>
