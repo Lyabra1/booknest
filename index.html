@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог — BookNest</title>
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
 </head>
 <body>
-    <header>
-    <a href="index.html">BookNest</a>
-    <nav aria-label="Основная навигация">
+    <header class="site-header">
+    <a class="site-header__logo" href="index.html">BookNest</a>
+    <nav class="site-nav" aria-label="Основная навигация">
         <ul>
         <li><a href="index.html" aria-current="page">Каталог</a></li>
         <li><a href="loan.html">Выдача книги</a></li>
@@ -17,10 +21,10 @@
     </nav>
     </header>
 
-    <main>
+    <main class="page page--catalog">
     <h1>Каталог книг</h1>
 
-    <section aria-labelledby="filters-title">
+    <section class="panel catalog__filters" aria-labelledby="filters-title">
         <h2 id="filters-title">Фильтры</h2>
         <form action="index.html" method="get">
         <label for="q">Поиск по названию или автору</label>
@@ -49,9 +53,9 @@
         </form>
     </section>
 
-    <section aria-labelledby="list-title">
+    <section class="catalog__content" aria-labelledby="list-title">
         <h2 id="list-title">Найдено 6 книг</h2>
-        <ul>
+        <ul class="catalog__grid">
         <li>
             <article>
             <h3><a href="book.html">Солярис</a></h3>
@@ -104,7 +108,7 @@
     </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
     <p>&copy; 2026 BookNest · Крупин В.А., 24-ИС-1</p>
     </footer>
 </body>

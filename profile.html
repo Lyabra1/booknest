@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профиль читателя — BookNest</title>
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
 </head>
 <body>
-    <header>
-    <a href="index.html">BookNest</a>
-    <nav aria-label="Основная навигачция">
+    <header class="site-header">
+    <a class="site-header__logo" href="index.html">BookNest</a>
+    <nav class="site-nav" aria-label="Основная навигация">
         <ul>
         <li><a href="index.html">Каталог</a></li>
         <li><a href="loan.html">Выдача книги</a></li>
@@ -17,7 +21,7 @@
     </nav>
     </header>
 
-<main>
+<main class="page page--narrow">
   <h1>Профиль читателя</h1>
 
   <section aria-labelledby="data-title">
@@ -91,7 +95,7 @@
   </section>
 </main>
 
-    <footer>
+    <footer class="site-footer">
     <p>&copy; 2026 BookNest · Крупин В.А., 24-ИС-1</p>
     </footer>
 
