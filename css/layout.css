@@ -1,0 +1,103 @@
+/* шапка: flex с переносом, на узком экране логотип и меню встают в две строки */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-4);
+  padding: var(--sp-3);
+  background: var(--surface);
+  border-block-end: var(--border) solid var(--line);
+}
+
+.site-header__logo {
+  color: var(--ink);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+  font-weight: var(--fw-bold);
+  text-decoration: underline;
+}
+
+.site-footer {
+  padding: var(--sp-3);
+  background: var(--surface);
+  border-block-start: var(--border) solid var(--line);
+  color: var(--muted);
+  font-size: var(--fs-small);
+}
+
+/* контейнер страницы: по центру, ширина ограничена, но не фиксирована */
+.page {
+  display: grid;
+  align-content: start;
+  gap: var(--sp-4);
+  inline-size: 100%;
+  max-inline-size: var(--page-max);
+  margin-inline: auto;
+  padding: var(--sp-4) var(--sp-3);
+}
+
+.page > * {
+  min-inline-size: 0;
+}
+
+.page--narrow {
+  max-inline-size: var(--page-narrow);
+}
+
+/* каталог: фильтры слева, если хватает места, иначе над карточками (без media query) */
+.page--catalog {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.page--catalog > h1 {
+  flex: 1 0 100%;
+}
+
+.catalog__filters {
+  flex: 1 1 var(--sidebar);
+}
+
+.catalog__content {
+  flex: 999 1 0%;
+  min-inline-size: 70%;
+}
+
+/* сетка карточек: число колонок подбирается по ширине */
+.catalog__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--card-min)), 1fr));
+  gap: var(--sp-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.catalog__grid > li {
+  display: flex;
+}
