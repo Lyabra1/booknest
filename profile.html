@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль читателя — BookNest</title>
+</head>
+<body>
+    <header>
+    <a href="index.html">BookNest</a>
+    <nav aria-label="Основная навигачция">
+        <ul>
+        <li><a href="index.html">Каталог</a></li>
+        <li><a href="loan.html">Выдача книги</a></li>
+        <li><a href="profile.html" aria-current="page">Профиль</a></li>
+        </ul>
+    </nav>
+    </header>
+
+<main>
+  <h1>Профиль читателя</h1>
+
+  <section aria-labelledby="data-title">
+    <h2 id="data-title">Данные читателя</h2>
+    <dl>
+      <dt>Имя</dt><dd>Владислав Крупин</dd>
+      <dt>E-mail</dt><dd>student@university.kz</dd>
+      <dt>Читательский билет</dt><dd>№ 24-0157</dd>
+      <dt>Дата регистрации</dt><dd><time datetime="2026-09-01">1 сентября 2026</time></dd>
+    </dl>
+  </section>
+
+  <section aria-labelledby="history-title">
+    <h2 id="history-title">История выдач</h2>
+    <table>
+      <caption>Книги, выданные читателю</caption>
+      <thead>
+        <tr>
+          <th scope="col">Книга</th>
+          <th scope="col">Выдана</th>
+          <th scope="col">Вернуть до</th>
+          <th scope="col">Статус</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Солярис</th>
+          <td><time datetime="2026-09-01">1 сентября 2026</time></td>
+          <td><time datetime="2026-09-15">15 сентября 2026</time></td>
+          <td>Возвращена</td>
+        </tr>
+        <tr>
+          <th scope="row">Чистый код</th>
+          <td><time datetime="2026-09-20">20 сентября 2026</time></td>
+          <td><time datetime="2026-10-04">4 октября 2026</time></td>
+          <td>Возвращена</td>
+        </tr>
+        <tr>
+          <th scope="row">Дюна</th>
+          <td><time datetime="2026-10-10">10 октября 2026</time></td>
+          <td><time datetime="2026-10-24">24 октября 2026</time></td>
+          <td>На руках</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section aria-labelledby="password-title">
+    <h2 id="password-title">Смена пароля</h2>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Новый пароль</legend>
+
+        <label for="old-password">Текущий пароль</label>
+        <input id="old-password" name="old_password" type="password"
+               required autocomplete="current-password">
+
+        <label for="new-password">Новый пароль</label>
+        <input id="new-password" name="new_password" type="password"
+               required minlength="8" autocomplete="new-password"
+               aria-describedby="password-hint">
+        <p id="password-hint">Не короче 8 символов.</p>
+
+        <label for="repeat-password">Повтор нового пароля</label>
+        <input id="repeat-password" name="repeat_password" type="password"
+               required minlength="8" autocomplete="new-password">
+
+        <button type="submit">Сменить пароль</button>
+      </fieldset>
+    </form>
+  </section>
+</main>
+
+    <footer>
+    <p>&copy; 2026 BookNest · Крупин В.А., 24-ИС-1</p>
+    </footer>
+
+
+
+</body>
+</html>
