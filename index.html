@@ -27,39 +27,34 @@
     <h1>Каталог книг</h1>
 
     <section class="panel catalog__filters" aria-labelledby="filters-title">
-        <h2 id="filters-title">Фильтры</h2>
+        <h2 id="filters-title">Поиск</h2>
         <form id="filters-form" class="form" action="index.html" method="get">
         <label for="q">Поиск по названию или автору</label>
-        <input id="q" name="q" type="search" maxlength="100" autocomplete="off">
-
-        <label for="genre">Жанр</label>
-        <select id="genre" name="genre">
-            <option value="all">Все жанры</option>
-            <option value="scifi">Фантастика</option>
-            <option value="history">История</option>
-            <option value="poetry">Поэзия</option>
-            <option value="cs">Информатика</option>
-            <option value="prose">Проза</option>
-        </select>
+        <input id="q" name="q" type="search" minlength="2" maxlength="100" autocomplete="off" aria-describedby="q-hint">
+        <p id="q-hint">Минимум 2 символа. Поиск начнётся сам, когда вы закончите печатать.</p>
 
         <label for="sort">Сортировка</label>
         <select id="sort" name="sort">
-            <option value="title">По названию (А–Я)</option>
-            <option value="year">По году (новые сначала)</option>
+            <option value="relevance">По релевантности</option>
+            <option value="new">Сначала новые</option>
             <option value="rating">По рейтингу</option>
         </select>
 
-        <input id="available" name="available" type="checkbox" value="1">
-        <label for="available">Только доступные</label>
-
-        <button type="reset">Сбросить фильтры</button>
+        <button type="reset">Сбросить</button>
         </form>
     </section>
 
     <section class="catalog__content" aria-labelledby="list-title">
-        <h2 id="list-title" aria-live="polite">Каталог</h2>
-        <p id="empty-message" class="empty" hidden>Ничего не найдено. Измените запрос или нажмите «Сбросить фильтры».</p>
-        <ul id="book-list" class="catalog__grid"></ul>
+        <h2 id="list-title" aria-live="polite">Результаты</h2>
+        <p id="status-loading" class="status" role="status" hidden>Загрузка…</p>
+        <p id="status-error" class="status status--error" role="alert" hidden><span id="error-message"></span> <button type="button" class="btn" data-action="retry">Повторить</button></p>
+        <p id="status-empty" class="status"></p>
+        <ul id="book-list" class="catalog__grid" hidden></ul>
+        <nav id="pagination" class="pagination" aria-label="Страницы результатов" hidden>
+            <button id="page-prev" type="button" class="btn" data-action="prev-page">Назад</button>
+            <p id="page-info"></p>
+            <button id="page-next" type="button" class="btn" data-action="next-page">Вперёд</button>
+        </nav>
     </section>
 
     <section class="panel catalog__wishlist" aria-labelledby="wishlist-title">

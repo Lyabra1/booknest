@@ -1,0 +1,76 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "BookNest Lab4",
+    "collectionId": "0be5dbfb-5779-46d6-80d8-f7f865b31113",
+    "dateExported": "2026-10-30T23:40:41.112Z",
+    "version": "1.4",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "6a92a853-1357-40fa-871a-9a2b42d4dfbc",
+            "colId": "0be5dbfb-5779-46d6-80d8-f7f865b31113",
+            "containerId": "",
+            "name": "https://openlibrary.org/search.json?q=solaris&limit=3&fields=key,title,author_name,first_publish_year,cover_i,ratings_average",
+            "url": "https://openlibrary.org/works/OL999999999W.json",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2026-10-30T23:37:09.933Z",
+            "modified": "2026-10-30T23:37:09.933Z",
+            "headers": []
+        },
+        {
+            "_id": "8e6664ea-4db4-490d-8254-45782ab5c898",
+            "colId": "0be5dbfb-5779-46d6-80d8-f7f865b31113",
+            "containerId": "",
+            "name": "https://openlibrary.org/search.json?q=solaris&limit=3&fields=key,title,author_name,first_publish_year,cover_i,ratings_average",
+            "url": "https://openlibrary.org/search.json?q=solaris&limit=3&fields=key,title,author_name,first_publish_year,cover_i,ratings_average",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2026-10-30T23:37:41.097Z",
+            "modified": "2026-10-30T23:37:41.097Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "q",
+                    "value": "solaris",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "3",
+                    "isPath": false
+                },
+                {
+                    "name": "fields",
+                    "value": "key,title,author_name,first_publish_year,cover_i,ratings_average",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "fbf42433-1277-40ac-bf8f-aaae3e2b2630",
+            "colId": "0be5dbfb-5779-46d6-80d8-f7f865b31113",
+            "containerId": "",
+            "name": "https://openlibrary.org/search.json?q=solaris&limit=3&fields=key,title,author_name,first_publish_year,cover_i,ratings_average",
+            "url": "https://openlibrary.org/works/OL109524W.json",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2026-10-30T23:38:26.303Z",
+            "modified": "2026-10-30T23:38:26.303Z",
+            "headers": []
+        },
+        {
+            "_id": "debd629d-176a-4925-a98f-c04fd76a4d56",
+            "colId": "0be5dbfb-5779-46d6-80d8-f7f865b31113",
+            "containerId": "",
+            "name": "https://openlibrary.org/works/OL109524W/ratings.json",
+            "url": "https://openlibrary.org/works/OL109524W/ratings.json",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2026-10-30T23:38:54.211Z",
+            "modified": "2026-10-30T23:38:54.211Z",
+            "headers": []
+        }
+    ],
+    "ref": "bphLY1h7lUFcybc_RIygSt0OftckIycn1Br-jE0DH_kyTd9EJPUG3mCpB1oflaq9SQTY8pyygu9AqfCJGNWrwQ"
+}

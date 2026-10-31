@@ -281,3 +281,43 @@ figcaption {
 .empty {
   color: var(--muted);
 }
+
+/* плашки состояний: загрузка, ошибка, пусто */
+.status {
+  padding: var(--sp-3);
+  background: var(--surface);
+  border: var(--border) solid var(--line);
+  border-radius: var(--radius);
+}
+
+.status--error {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-3);
+  border-color: var(--danger);
+}
+
+/* кнопки страниц */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-3);
+}
+
+.btn:disabled {
+  opacity: var(--disabled-opacity);
+  cursor: not-allowed;
+}
+
+/* описание книги приходит с переносами строк */
+.book__description {
+  white-space: pre-line;
+}
+
+/* Должно быть последним: у классов выше такая же сила, и без этого атрибут hidden не сработал бы. */
+[hidden] {
+  display: none;
+}
