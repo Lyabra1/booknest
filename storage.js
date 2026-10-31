@@ -1,4 +1,4 @@
-const KEY = 'booknest:state:v1';
+const KEY = 'booknest:state:v2';
 
 export function loadSaved() {
   try {
