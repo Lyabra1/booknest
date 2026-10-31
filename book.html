@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Солярис — BookNest</title>
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
 </head>
 <body>
-    <header>
-    <a href="index.html">BookNest</a>
-    <nav aria-label="Основная навигация">
+    <header class="site-header">
+    <a class="site-header__logo" href="index.html">BookNest</a>
+    <nav class="site-nav" aria-label="Основная навигация">
         <ul>
         <li><a href="index.html">Каталог</a></li>
         <li><a href="loan.html">Выдача книги</a></li>
@@ -17,8 +21,8 @@
     </nav>
     </header>
 
-<main>
-  <nav aria-label="Хлебные крошки">
+<main class="page page--narrow">
+  <nav class="crumbs" aria-label="Хлебные крошки">
     <ol>
       <li><a href="index.html">Каталог</a></li>
       <li aria-current="page">Солярис</li>
@@ -35,7 +39,7 @@
 
     <section aria-labelledby="specs-title">
       <h2 id="specs-title">Характеристики</h2>
-      <dl>
+      <dl class="specs">
         <dt>Автор</dt><dd>Станислав Лем</dd>
         <dt>Год издания</dt><dd><time datetime="1961">1961</time></dd>
         <dt>Жанр</dt><dd>Фантастика</dd>
@@ -50,7 +54,7 @@
     </section>
   </article>
 
-  <section aria-labelledby="reviews-title">
+  <section class="reviews" aria-labelledby="reviews-title">
     <h2 id="reviews-title">Отзывы</h2>
 
     <article>
@@ -68,11 +72,11 @@
     </article>
 
     <h3>Оставить отзыв</h3>
-    <form action="#" method="post">
+    <form class="form" action="#" method="post">
       <label for="author">Ваше имя</label>
       <input id="author" name="author" type="text" required minlength="2" maxlength="60">
 
-      <fieldset>
+      <fieldset class="form form--group">
         <legend>Оценка</legend>
         <input id="r1" name="rating" type="radio" value="1" required><label for="r1">1</label>
         <input id="r2" name="rating" type="radio" value="2"><label for="r2">2</label>
@@ -88,7 +92,7 @@
     </form>
   </section>
 
-  <aside aria-labelledby="similar-title">
+  <aside class="related" aria-labelledby="similar-title">
     <h2 id="similar-title">Похожие книги</h2>
     <ul>
       <li><article><h3><a href="book.html">Дюна</a></h3><p>Фрэнк Герберт, 1965</p></article></li>
@@ -99,7 +103,7 @@
   </aside>
 </main>
 
-    <footer>
+    <footer class="site-footer">
     <p>&copy; 2026 BookNest · Крупин В.А., 24-ИС-1</p>
     </footer>
 </body>
