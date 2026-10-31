@@ -101,3 +101,8 @@
 .catalog__grid > li {
   display: flex;
 }
+
+/* «Мой список» занимает всю строку под каталогом */
+.catalog__wishlist {
+  flex: 1 0 100%;
+}

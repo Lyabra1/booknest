@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог — BookNest</title>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="styles/tokens.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
@@ -17,6 +18,7 @@
         <li><a href="index.html" aria-current="page">Каталог</a></li>
         <li><a href="loan.html">Выдача книги</a></li>
         <li><a href="profile.html">Профиль</a></li>
+        <li><a href="#wishlist-title">Мой список (<span id="wishlist-count">0</span>)</a></li>
         </ul>
     </nav>
     </header>
@@ -26,9 +28,9 @@
 
     <section class="panel catalog__filters" aria-labelledby="filters-title">
         <h2 id="filters-title">Фильтры</h2>
-        <form class="form" action="index.html" method="get">
+        <form id="filters-form" class="form" action="index.html" method="get">
         <label for="q">Поиск по названию или автору</label>
-        <input id="q" name="q" type="search" maxlength="100">
+        <input id="q" name="q" type="search" maxlength="100" autocomplete="off">
 
         <label for="genre">Жанр</label>
         <select id="genre" name="genre">
@@ -37,11 +39,12 @@
             <option value="history">История</option>
             <option value="poetry">Поэзия</option>
             <option value="cs">Информатика</option>
+            <option value="prose">Проза</option>
         </select>
 
         <label for="sort">Сортировка</label>
         <select id="sort" name="sort">
-            <option value="title">По названию</option>
+            <option value="title">По названию (А–Я)</option>
             <option value="year">По году (новые сначала)</option>
             <option value="rating">По рейтингу</option>
         </select>
@@ -49,67 +52,26 @@
         <input id="available" name="available" type="checkbox" value="1">
         <label for="available">Только доступные</label>
 
-        <button type="submit">Применить</button>
+        <button type="reset">Сбросить фильтры</button>
         </form>
     </section>
 
     <section class="catalog__content" aria-labelledby="list-title">
-        <h2 id="list-title">Найдено 6 книг</h2>
-        <ul class="catalog__grid">
-        <li>
-            <article class="card">
-            <h3><a href="book.html">Солярис</a></h3>
-            <p>Станислав Лем, <time datetime="1961">1961</time></p>
-            <img src="img/cover.jpg" alt="Обложка книги «Солярис»" width="200" height="300">
-            <p><strong>Доступна</strong> · 3 экземпляра</p>
-            </article>
-        </li>
-        <li>
-            <article class="card">
-            <h3><a href="book.html">Дюна</a></h3>
-            <p>Фрэнк Герберт, <time datetime="1965">1965</time></p>
-            <img src="img/cover.jpg" alt="Обложка книги «Дюна»" width="200" height="300">
-            <p><strong>Доступна</strong> · 2 экземпляра</p>
-            </article>
-        </li>
-        <li>
-            <article class="card">
-            <h3><a href="book.html">Мы</a></h3>
-            <p>Евгений Замятин, <time datetime="1924">1924</time></p>
-            <img src="img/cover.jpg" alt="Обложка книги «Мы»" width="200" height="300">
-            <p><strong>Выдана</strong></p>
-            </article>
-        </li>
-        <li>
-            <article class="card">
-            <h3><a href="book.html">Чистый код</a></h3>
-            <p>Роберт Мартин, <time datetime="2008">2008</time></p>
-            <img src="img/cover.jpg" alt="Обложка книги «Чистый код»" width="200" height="300">
-            <p><strong>Доступна</strong> · 1 экземпляр</p>
-            </article>
-        </li>
-        <li>
-            <article class="card">
-            <h3><a href="book.html">Евгений Онегин</a></h3>
-            <p>Александр Пушкин, <time datetime="1833">1833</time></p>
-            <img src="img/cover.jpg" alt="Обложка книги «Евгений Онегин»" width="200" height="300">
-            <p><strong>Доступна</strong> · 4 экземпляра</p>
-            </article>
-        </li>
-        <li>
-            <article class="card">
-            <h3><a href="book.html">Сапиенс</a></h3>
-            <p>	Юваль Харари, <time datetime="2011">2011</time></p>
-            <img src="img/cover.jpg" alt="Обложка книги «Сапиенс»" width="200" height="300">
-            <p><strong>Выдана</strong></p>
-            </article>
-        </li>
-        </ul>
+        <h2 id="list-title" aria-live="polite">Каталог</h2>
+        <p id="empty-message" class="empty" hidden>Ничего не найдено. Измените запрос или нажмите «Сбросить фильтры».</p>
+        <ul id="book-list" class="catalog__grid"></ul>
+    </section>
+
+    <section class="panel catalog__wishlist" aria-labelledby="wishlist-title">
+        <h2 id="wishlist-title" tabindex="-1">Мой список</h2>
+        <p id="wishlist-empty" class="empty" hidden>Список пуст. Нажмите «Хочу прочитать» на карточке книги.</p>
+        <ul id="wishlist-list" class="wishlist__list"></ul>
     </section>
     </main>
 
     <footer class="site-footer">
     <p>&copy; 2026 BookNest · Крупин В.А., 24-ИС-1</p>
     </footer>
+    <script type="module" src="main.js"></script>
 </body>
 </html>

@@ -211,3 +211,73 @@ figcaption {
   opacity: var(--disabled-opacity);
   cursor: not-allowed;
 }
+
+/* кнопки вне форм: «Хочу прочитать», «Удалить» */
+.btn {
+  min-block-size: var(--tap);
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--surface);
+  color: var(--accent);
+  border: var(--border) solid var(--accent);
+  border-radius: var(--radius);
+  font: inherit;
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+  transition: background-color var(--motion) ease;
+}
+
+.btn:hover {
+  background: var(--paper);
+}
+
+/* состояние «в списке» задаётся атрибутом, который читают и скринридеры */
+.btn[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn[aria-pressed="true"]::before {
+  content: "✓ ";
+}
+
+.btn[aria-pressed="true"]:hover {
+  background: var(--accent-hover);
+}
+
+/* низ карточки: статус и кнопка */
+.card__footer {
+  display: grid;
+  gap: var(--sp-2);
+}
+
+/* кнопка сброса в форме: второстепенная, без заливки */
+.form button[type="reset"] {
+  background: var(--surface);
+  color: var(--accent);
+  border: var(--border) solid var(--accent);
+}
+
+.form button[type="reset"]:hover {
+  background: var(--paper);
+}
+
+/* «Мой список» */
+.wishlist__list {
+  display: grid;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wishlist__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2) var(--sp-3);
+}
+
+.empty {
+  color: var(--muted);
+}
