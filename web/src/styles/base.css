@@ -1,0 +1,55 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+/* подвал прижат к низу окна: три строки, средняя занимает всё свободное место */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: var(--fs-base) / var(--lh) var(--font);
+}
+
+h1, h2, h3, p, dl, dd, ul, ol, figure {
+  margin: 0;
+}
+
+h1, h2, h3 {
+  line-height: var(--lh-tight);
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+a {
+  color: var(--accent);
+}
+
+/* видимый фокус у всех интерактивных элементов */
+:focus-visible {
+  outline: var(--outline) solid var(--accent);
+  outline-offset: var(--sp-1);
+}
+
+/* блоки внутри страницы: вертикальный поток с одинаковым gap */
+section, article, aside, figure {
+  display: grid;
+  align-content: start;
+  gap: var(--sp-3);
+}

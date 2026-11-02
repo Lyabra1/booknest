@@ -1,0 +1,33 @@
+/* значок: рейтинг, счётчик */
+.badge {
+  display: inline-block;
+  padding: 0 var(--sp-2);
+  background: var(--surface);
+  border: var(--border) solid var(--line);
+  border-radius: var(--radius);
+}
+
+/* крутящийся индикатор загрузки */
+.spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: var(--sp-2);
+  vertical-align: -0.15em;
+  border: 2px solid var(--line);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+}
